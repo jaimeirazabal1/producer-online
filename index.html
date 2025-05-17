@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productor de Música en Línea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Productor de Música</h1>
+        </header>
+        
+        <main>
+            <div class="synth-panel">
+                <h2>Sintetizador</h2>
+                <div class="piano-keys">
+                    <div class="key white" data-note="C4">
+                        <span class="note-label">C</span>
+                    </div>
+                    <div class="key black" data-note="C#4">
+                        <span class="note-label">C#</span>
+                    </div>
+                    <div class="key white" data-note="D4">
+                        <span class="note-label">D</span>
+                    </div>
+                    <div class="key black" data-note="D#4">
+                        <span class="note-label">D#</span>
+                    </div>
+                    <div class="key white" data-note="E4">
+                        <span class="note-label">E</span>
+                    </div>
+                    <div class="key white" data-note="F4">
+                        <span class="note-label">F</span>
+                    </div>
+                    <div class="key black" data-note="F#4">
+                        <span class="note-label">F#</span>
+                    </div>
+                    <div class="key white" data-note="G4">
+                        <span class="note-label">G</span>
+                    </div>
+                    <div class="key black" data-note="G#4">
+                        <span class="note-label">G#</span>
+                    </div>
+                    <div class="key white" data-note="A4">
+                        <span class="note-label">A</span>
+                    </div>
+                    <div class="key black" data-note="A#4">
+                        <span class="note-label">A#</span>
+                    </div>
+                    <div class="key white" data-note="B4">
+                        <span class="note-label">B</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="control-group">
+                        <label>Octava:</label>
+                        <select id="octave">
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Volumen:</label>
+                        <input type="range" id="volume" min="0" max="100" value="70">
+                    </div>
+                </div>
+            </div>
+
+            <div class="drum-panel">
+                <h2>Batería</h2>
+                <div class="drum-controls">
+                    <div class="drum-instruments">
+                        <div class="drum-instrument">
+                            <label>Base (Q)</label>
+                            <div class="sound-select">
+                                <select class="sound-picker" data-instrument="kick">
+                                    <option value="sounds/kick-drum-263837.mp3">Kick Drum</option>
+                                    <option value="sounds/kick-greg-232043.mp3">Kick Greg</option>
+                                    <option value="sounds/tr909-kick-drum-241402.mp3">TR-909 Kick</option>
+                                    <option value="sounds/super-kick8-92810.mp3">Super Kick</option>
+                                </select>
+                                <div class="drum-key" data-instrument="kick">Kick</div>
+                            </div>
+                        </div>
+                        <div class="drum-instrument">
+                            <label>Snare (W)</label>
+                            <div class="sound-select">
+                                <select class="sound-picker" data-instrument="snare">
+                                    <option value="sounds/electro-snare-202537.mp3">Electro Snare</option>
+                                    <option value="sounds/hi_flitter_snare-88923.mp3">Hi Flitter Snare</option>
+                                    <option value="sounds/low_flitter_snare-106005.mp3">Low Flitter Snare</option>
+                                    <option value="sounds/schallende-snare-149807.mp3">Schallende Snare</option>
+                                    <option value="sounds/snare-112754.mp3">Snare 112754</option>
+                                    <option value="sounds/snare-328872.mp3">Snare 328872</option>
+                                    <option value="sounds/snare-341350.mp3">Snare 341350</option>
+                                    <option value="sounds/snare-drum-341273.mp3">Snare Drum</option>
+                                    <option value="sounds/tr707-snare-drum-241412.mp3">TR-707 Snare</option>
+                                    <option value="sounds/tr808-snare-drum-241403.mp3">TR-808 Snare</option>
+                                    <option value="sounds/vatsnare-88921.mp3">Vat Snare</option>
+                                </select>
+                                <div class="drum-key" data-instrument="snare">Snare</div>
+                            </div>
+                        </div>
+                        <div class="drum-instrument">
+                            <label>Hihat (E)</label>
+                            <div class="sound-select">
+                                <select class="sound-picker" data-instrument="hihat">
+                                    <option value="sounds/hihat-164695.mp3">Hihat 164695</option>
+                                    <option value="sounds/hihat-7-45328.mp3">Hihat 7</option>
+                                    <option value="sounds/hihat-closing-98355.mp3">Hihat Closing</option>
+                                    <option value="sounds/lofi-ko-hihat-open-36566.mp3">Lofi Hihat Open</option>
+                                </select>
+                                <div class="drum-key" data-instrument="hihat">Hihat</div>
+                            </div>
+                        </div>
+                        <div class="drum-instrument">
+                            <label>Cymbal (R)</label>
+                            <div class="sound-select">
+                                <select class="sound-picker" data-instrument="cymbal">
+                                    <option value="sounds/digital-ride-2-45769.mp3">Digital Ride</option>
+                                    <option value="sounds/long-ride-cymbal-2-36337.mp3">Long Ride</option>
+                                    <option value="sounds/long-ride-cymbal-94674.mp3">Long Ride 2</option>
+                                    <option value="sounds/projection-crash-cymbal-101966.mp3">Crash Cymbal</option>
+                                    <option value="sounds/reverse-cymbal-sound-effect-239951.mp3">Reverse Cymbal</option>
+                                    <option value="sounds/tr707-crash-cymbal-241376.mp3">TR-707 Crash</option>
+                                    <option value="sounds/tr808-crash-cymbal-241377.mp3">TR-808 Crash</option>
+                                    <option value="sounds/tr909-crash-cymbal-241378.mp3">TR-909 Crash</option>
+                                </select>
+                                <div class="drum-key" data-instrument="cymbal">Cymbal</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drum-pattern-grid">
+                        <div class="drum-pattern-row" data-instrument="kick">
+                            <div class="drum-cell active" data-step="0"></div>
+                            <div class="drum-cell" data-step="1"></div>
+                            <div class="drum-cell" data-step="2"></div>
+                            <div class="drum-cell" data-step="3"></div>
+                            <div class="drum-cell" data-step="4"></div>
+                            <div class="drum-cell" data-step="5"></div>
+                            <div class="drum-cell" data-step="6"></div>
+                            <div class="drum-cell" data-step="7"></div>
+                        </div>
+                        <div class="drum-pattern-row" data-instrument="snare">
+                            <div class="drum-cell" data-step="0"></div>
+                            <div class="drum-cell" data-step="1"></div>
+                            <div class="drum-cell" data-step="2"></div>
+                            <div class="drum-cell" data-step="3"></div>
+                            <div class="drum-cell" data-step="4"></div>
+                            <div class="drum-cell" data-step="5"></div>
+                            <div class="drum-cell" data-step="6"></div>
+                            <div class="drum-cell" data-step="7"></div>
+                        </div>
+                        <div class="drum-pattern-row" data-instrument="hihat">
+                            <div class="drum-cell" data-step="0"></div>
+                            <div class="drum-cell" data-step="1"></div>
+                            <div class="drum-cell" data-step="2"></div>
+                            <div class="drum-cell" data-step="3"></div>
+                            <div class="drum-cell" data-step="4"></div>
+                            <div class="drum-cell" data-step="5"></div>
+                            <div class="drum-cell" data-step="6"></div>
+                            <div class="drum-cell" data-step="7"></div>
+                        </div>
+                        <div class="drum-pattern-row" data-instrument="cymbal">
+                            <div class="drum-cell" data-step="0"></div>
+                            <div class="drum-cell" data-step="1"></div>
+                            <div class="drum-cell" data-step="2"></div>
+                            <div class="drum-cell" data-step="3"></div>
+                            <div class="drum-cell" data-step="4"></div>
+                            <div class="drum-cell" data-step="5"></div>
+                            <div class="drum-cell" data-step="6"></div>
+                            <div class="drum-cell" data-step="7"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sequencer-panel">
+                <h2>Secuenciador</h2>
+                <div class="pattern-grid">
+                    <div class="pattern-row">
+                        <div class="pattern-cell active" data-step="0"></div>
+                        <div class="pattern-cell" data-step="1"></div>
+                        <div class="pattern-cell" data-step="2"></div>
+                        <div class="pattern-cell" data-step="3"></div>
+                        <div class="pattern-cell" data-step="4"></div>
+                        <div class="pattern-cell" data-step="5"></div>
+                        <div class="pattern-cell" data-step="6"></div>
+                        <div class="pattern-cell" data-step="7"></div>
+                    </div>
+                    <div class="pattern-row">
+                        <div class="pattern-cell" data-step="0"></div>
+                        <div class="pattern-cell" data-step="1"></div>
+                        <div class="pattern-cell" data-step="2"></div>
+                        <div class="pattern-cell" data-step="3"></div>
+                        <div class="pattern-cell" data-step="4"></div>
+                        <div class="pattern-cell" data-step="5"></div>
+                        <div class="pattern-cell" data-step="6"></div>
+                        <div class="pattern-cell" data-step="7"></div>
+                    </div>
+                </div>
+                <div class="sequencer-controls">
+                    <button id="play">Play</button>
+                    <button id="stop">Stop</button>
+                    <input type="range" id="bpm" min="60" max="200" value="120">
+                    <span id="bpm-display">120 BPM</span>
+                </div>
+                <div class="metronome-controls">
+                    <button id="metronome-toggle">Metronome</button>
+                    <div class="control-group">
+                        <label for="metronome-bpm">BPM Metronome:</label>
+                        <input type="range" id="metronome-bpm" min="60" max="200" value="120">
+                        <span id="metronome-bpm-display">120 BPM</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="metronome-volume">Volume:</label>
+                        <input type="range" id="metronome-volume" min="0" max="100" value="50">
+                        <span id="metronome-volume-display">50%</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

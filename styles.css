@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 2.5em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.synth-panel, .sequencer-panel, .drum-panel {
+    background: #2d2d2d;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.synth-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.piano-keys {
+    display: inline-block;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.key {
+    display: inline-block;
+    width: 60px;
+    height: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.note-label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.control-group select,
+.control-group input[type="range"] {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+}
+
+.drum-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.drum-instruments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.drum-instrument {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sound-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.sound-picker {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+    width: 100%;
+    max-width: 120px;
+    cursor: pointer;
+}
+
+.sound-picker option {
+    background: #444;
+    color: #fff;
+}
+
+.drum-key-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.drum-key {
+    width: 100%;
+    height: 100%;
+    background: #444;
+    border: 2px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    gap: 2px;
+}
+
+.drum-pattern-row {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+.drum-cell {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sequencer-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+}
+
+.pattern-row {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+.pattern-cell {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sequencer-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+    max-width: 100px;
+}
+
+#bpm {
+    flex: 2;
+    max-width: 150px;
+}
+
+.drum-instruments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.drum-instrument {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sound-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sound-picker {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+    width: 100%;
+    max-width: 120px;
+    cursor: pointer;
+}
+
+.sound-picker option {
+    background: #444;
+    color: #fff;
+}
+
+.drum-key {
+    width: 80px;
+    height: 80px;
+    background: #333;
+    border: 2px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.drum-key:hover {
+    background: #555;
+}
+
+.drum-key:active {
+    background: #4CAF50;
+}
+
+.drum-pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.drum-pattern-row {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+.drum-cell {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.drum-cell.active {
+    background: #4CAF50;
+}
+
+.drum-cell:hover {
+    background: #555;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.key {
+    height: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.key.white {
+    background: #ffffff;
+    border: 2px solid #333;
+}
+
+.key.black {
+    background: #000000;
+    grid-column: span 1;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+.key:active {
+    background: #4CAF50;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.9em;
+}
+
+.control-group select,
+.control-group input[type="range"] {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.pattern-row {
+    display: flex;
+    gap: 2px;
+}
+
+.pattern-cell {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pattern-cell.active {
+    background: #4CAF50;
+}
+
+.pattern-cell:hover {
+    background: #555;
+}
+
+.sequencer-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+#bpm {
+    width: 200px;
+}
+
+#bpm-display {
+    margin-left: 10px;
+}
